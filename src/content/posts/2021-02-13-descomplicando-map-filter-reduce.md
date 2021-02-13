@@ -38,8 +38,6 @@ const newArray = oldArray.map(value => (value * value))
 // newArray = [4, 9, 16, 25, 36]
 ```
 
-
-
 Como podem ver, é bem mais legível que utilizar um *for()* e *oldArray.length.*
 
 Para um exemplo mais *"complexo"* e de cenário mais próximo do mundo real:
@@ -47,9 +45,7 @@ Para um exemplo mais *"complexo"* e de cenário mais próximo do mundo real:
 Vamos imaginar que você possui um grupo de *membros* e as seus cargos.
 E você precisa buscar pelo mesmo e retornar um objeto no qual possua os dois elementos transpilados.
 
-
 ```typescript
-
 interface IMembers {
   name: string;
   phone: string;
@@ -100,30 +96,32 @@ const transformedMembers = members.map(member => {
 
 /*
 O retorno seria: 
-[{
-  "name": "Cosmo 1",
-  "phone": "(DD) 00000000",
-  "email": "email@email.com",
-  "rank": 1,
-  "role": "Owner",
-  "payment": 150000
-}, {
-  "name": "Cosmo 2",
-  "phone": "(DD) 22222222",
-  "email": "email2@email.com",
-  "rank": 2,
-  "role": "Tech Lead",
-  "payment": 20000
-}, {
-  "name": "Cosmo 3",
-  "phone": "(DD) 3333333",
-  "email": "email3@email.com",
-  "rank": 3,
-  "role": "Programmer",
-  "payment": 8000
-}] 
+[
+  {
+    "name": "Cosmo 1",
+    "phone": "(DD) 00000000",
+    "email": "email@email.com",
+    "rank": 1,
+    "role": "Owner",
+    "payment": 150000
+  },
+  {
+    "name": "Cosmo 2",
+    "phone": "(DD) 22222222",
+    "email": "email2@email.com",
+    "rank": 2,
+    "role": "Tech Lead",
+    "payment": 20000
+  },
+  {
+    "name": "Cosmo 3",
+    "phone": "(DD) 3333333",
+    "email": "email3@email.com",
+    "rank": 3,
+    "role": "Programmer",
+    "payment": 8000
+  }
+ ] 
 
 */
-
-
 ```
