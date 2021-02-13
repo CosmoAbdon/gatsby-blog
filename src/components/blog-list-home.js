@@ -18,7 +18,7 @@ const PostMaker = ({ data }) => (
         variant: 'links.button'
       }}
     >
-      See more<span class="icon -right"><RiArrowRightSLine/></span>
+      Veja mais<span class="icon -right"><RiArrowRightSLine/></span>
     </Link>
   </section>
 )
