@@ -156,7 +156,9 @@ const even = values.filter(value => ((value % 2) == 0))
 * Evitamos de mutar um array dentro de um forEach() ou for()
 * Assignamos o resultado diretamente dentro de uma nova variável, ao invés de aplicar um .push() em array definido em algum trecho do nosso código.
 
-Um adendo de aplicar o filter(), é que sempre necessitamos de utilizar algo que retorne um booleano (true ou false). Do contrário o javascript irá tentar sua regra de coerção. Em resumo, irá inferir em um bug, que provavelmente irá tirar sua sanidade, o erro que o mesmo produz é silencioso e não apresenta erro, vide o javascript forçar a regra de coerção. Em tese é aplicado um type casting (transforma any -> boolean)
+Um adendo de aplicar o filter(), é que sempre necessitamos de utilizar uma condicional para que retorne um booleano (true ou false). Do contrário o javascript irá tentar aplicar sua regra de coerção.
+
+Em resumo, irá ocorrer um bug, que provavelmente irá tirar sua sanidade; O erro que o mesmo produz é silencioso, vide o javascript forçar a **regra de coerção**. Em tese é aplicado um **type casting** (transforma any -> boolean), logo não existe erro semântico, apenas sintático. Não retorno mensagem alguma de aviso ao desenvolvedor.
 
 ### Reduce():
 
@@ -189,9 +191,9 @@ Como isso funciona por trás dos panos ?
 
 Adendos: 
 
-* Não esquecer de retorna um valor
-* Esquecer de definir um valor inicial
-* Esperar um array, quando o reduce te trás um valor único
+* Lembre-se de retornar um valor
+* Lembra-se de definir um valor inicial
+* E jamais espere um array, quando o reduce te trás apenas um valor único
 
 ## Unificando funções:
 
