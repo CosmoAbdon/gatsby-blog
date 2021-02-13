@@ -1,11 +1,8 @@
 ---
 template: index-page
 slug: /
-title: Wyatt Morriss
-tagline: Graphic Designer
-featuredImage: /assets/toa-heftiba-0rlfirsdvzu-unsplash.jpg
-cta:
-  ctaText: Know more
-  ctaLink: /about
+title: Cosmo Abdon
+tagline: Desenvolvedor Back-end
+featuredImage: /assets/eu.jpg
 ---
-He is a award winning gaming graphic designer, based in sunny side of California. Working as Principal designer at Bethesda
+Entusiasta de programação. Hoje focado em desenvolvimento JS/TS (NodeJS). Com background em Go, Python e Java. Atualmente atuo como dev. na 2Bebot.
