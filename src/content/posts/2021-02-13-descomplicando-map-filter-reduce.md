@@ -156,7 +156,7 @@ const even = values.filter(value => ((value % 2) == 0))
 * Evitamos de mutar um array dentro de um forEach() ou for()
 * Assignamos o resultado diretamente dentro de uma nova variável, ao invés de aplicar um .push() em array definido em algum trecho do nosso código.
 
-Um adendo de aplicar o filter(), é que sempre necessitamos de utilizar algo que retorne um booleano (true ou false). Do contrário o javascript irá tentar sua regra de coerção. Em resumo, irá inferir em um bug, que provavelmente irá tirar sua sanidade, vide ser um dos silenciosos.
+Um adendo de aplicar o filter(), é que sempre necessitamos de utilizar algo que retorne um booleano (true ou false). Do contrário o javascript irá tentar sua regra de coerção. Em resumo, irá inferir em um bug, que provavelmente irá tirar sua sanidade, o erro que o mesmo produz é silencioso e não apresenta erro, vide o javascript forçar a regra de coerção. Em tese é aplicado um type casting (transforma any -> boolean)
 
 ### Reduce():
 
@@ -209,8 +209,6 @@ Vamos para um cenário real.
 * Multiplicar o resultado pela hora de trabalho
 * Imprimir o resultado com 'R$'
 
- 
-
 ```javascript
 const monday = [
   { 'name'     : 'Roberto', 'duration' : 240 },
@@ -242,8 +240,6 @@ const result = days
 
 console.log(`R$ ${result}`) // Retorna: R$ 432.00
 ```
-
-
 
 ## Finalização
 
