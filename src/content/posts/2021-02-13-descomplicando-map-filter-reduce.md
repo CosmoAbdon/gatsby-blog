@@ -4,6 +4,7 @@ title: "Descomplicando: Map() - Filter() - Reduce()"
 slug: /nodejs/bigthree
 date: 2021-02-13 01:24
 description: map, reduce, filter
+featuredImage: /assets/blog-logo.png
 ---
 # Descomplicando;
 
