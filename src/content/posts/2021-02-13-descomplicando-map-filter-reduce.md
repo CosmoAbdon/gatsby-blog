@@ -125,3 +125,8 @@ O retorno seria:
 
 */
 ```
+
+
+
+Como vocês podem ver, é um simples código com dependência e composição.\
+Vide que o cargo depende fortemente do membro, caso o membro seja destruído, o cargo também é nulificado.
