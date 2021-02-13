@@ -241,3 +241,10 @@ const result = days
 
 console.log(`R$ ${result}`) // Retorna: R$ 432.00
 ```
+
+
+
+## Finalização
+
+Com isto, vimos as três funções *map()*, *filter()* e *reduce()*.\
+Agora é praticar e criar maturidade na utilização das mesmas.
