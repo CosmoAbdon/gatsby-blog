@@ -126,7 +126,118 @@ O retorno seria:
 */
 ```
 
-
-
 Como vocês podem ver, é um simples código com dependência e composição.\
 Vide que o cargo depende fortemente do membro, caso o membro seja destruído, o cargo também é nulificado.
+
+Existem alguma diferenças entre o *for()* e o *map()*, vamos litar algumas delas:
+
+* Utilizando o *map()*, você não precisa gerenciar o estado do *for()*.
+* Com o *map()*, você consegue operar o elemento diretamente, diferente de manipular dentro de um *index* do array
+* Você não precisa criar um novo array vazio e fazer um *.push()* dentro do mesmo. O *map()* retorna todos os dados de uma vez só, então podemos apenas assignar para uma variável.
+* Você precisa incluir um return no seu *statement*. Caso contrário, você vai obter um novo array com apenas `undefined`
+
+``
+
+### Filter():
+
+Nosso próximo caso é o filter().\
+E ele é exatamente o que o próprio método diz, filtra elementos que não desejamos de um array.
+
+Um simples exemplo é obter os números pares de um array.
+
+```typescript
+const values: number[] = [2, 3, 4, 5, 6, 7, 8];
+
+const even = values.filter(value => ((value % 2) == 0))
+// retorna: [2, 4, 6, 8] 
+```
+
+* Evitamos de mutar um array dentro de um forEach() ou for()
+* Assignamos o resultado diretamente dentro de uma nova variável, ao invés de aplicar um .push() em array definido em algum trecho do nosso código.
+
+Um adendo de aplicar o filter(), é que sempre necessitamos de utilizar algo que retorne um booleano (true ou false). Do contrário o javascript irá tentar sua regra de coerção. Em resumo, irá inferir em um bug, que provavelmente irá tirar sua sanidade, vide ser um dos silenciosos.
+
+### Reduce():
+
+O reduce() pega todos os elementos de um array e reduz o mesmo para um único valor.
+
+Como o: map e o filter, o reduce também está definido dentro do Array.prototype então estará disponível em qualquer array. \
+\
+Você irá passar um callbackFunction como primeiro argumento e como segundo argumento, irá passar um inicializador. O inicializador é o valor inicial para combinar os seus elementos
+
+O reduce() te passa 4 argumentos: `currentValue, accumulator, currentIndex, theArrayItSelf`
+
+Vamos para um exemplo prático:
+
+```typescript
+const numbers: number[] = [2, 4, 6, 8, 11];
+
+const total = numbers.reduce(((acc, curr) => (acc + curr)), 0)
+// retorna: 31
+```
+
+Como isso funciona por trás dos panos ?
+
+| Interação | Accumulator | Current | Total |
+| --------- | ----------- | ------- | ----- |
+| 1         | 0           | 2       | 2     |
+| 2         | 2           | 4       | 6     |
+| 3         | 6           | 6       | 12    |
+| 4         | 12          | 8       | 20    |
+| 5         | 20          | 11      | 31    |
+
+Adendos: 
+
+* Não esquecer de retorna um valor
+* Esquecer de definir um valor inicial
+* Esperar um array, quando o reduce te trás um valor único
+
+## Unificando funções:
+
+Bem, nós vimos o *map()*, *filter()* e *reduce()*.
+Podemos fazer uma função utilizando os 3? Claro que sim!
+
+Vamos para um cenário real.
+
+\- Regra de negócio:
+
+* Obter escala de segunda, terça e quinta
+* Converter horas de trabalho para horas (ao invés de minutos)
+* Obter funcionários que trabalham apenas 4 horas ou menos
+* Somar essas horas
+* Multiplicar o resultado pela hora de trabalho
+* Imprimir o resultado com 'R$'
+
+ 
+
+```javascript
+const monday = [
+  { 'name'     : 'Roberto', 'duration' : 240 },
+  { 'name'     : 'Lucas', 'duration' : 120 }
+];
+
+const tuesday = [
+  { 'name': 'Marcelo', 'duration' : 360 },
+  { 'name': 'Luiz', 'duration' : 80 },
+  { 'name': 'João', 'duration'  : 600}
+];
+
+const thursday = [
+  { 'name': 'Robervaldo', 'duration' : 240 },
+  { 'name': 'Antônio', 'duration' : 540 },
+  { 'name': 'Lúcio', 'duration'  : 280 }
+];
+
+const days = [monday, tuesday, tuesday];
+
+
+const result = days
+  .reduce((acc, curr) => acc.concat(curr)) // Transformar nosso array bi-dimensional em uma lista
+  .map(day => day.duration / 60) // Obtem a duração e converte para horas
+  .filter((duration) => duration >= 4) // Filtra os trabalhadores que trabalham 4 horas ou mais
+  .map((duration) => duration * 12) // Multiplica as horas pelo valor da hora de trabalho
+  .reduce((acc, curr) => (+acc) + (+curr)) // Combina a somatória em um valor único
+  .toFixed(2) // Define precisão de duas casas decimais
+
+console.log(`R$ ${result}`) // Retorna: R$ 432.00
+```
