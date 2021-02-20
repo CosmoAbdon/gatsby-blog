@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: Substituindo switch's e else-if
-slug: nodejs/better-switch
+slug: /nodejs/better-switch
 date: 2021-02-20 13:06
 description: |
   switch
