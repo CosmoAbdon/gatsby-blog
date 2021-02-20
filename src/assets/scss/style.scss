@@ -35,7 +35,9 @@
     }
   }
   a[aria-current="page"] {
-    color: rgba(255,255,255,1)
+		font-weight: bolder;
+		color: rgba(255,255,255,1);
+		font-size: larger;
   }
   .menu-trigger {
     display: none;
@@ -210,7 +212,7 @@
   }
   time {
     font-size: 14px;
-    color: rgba(0,0,0,0.6)
+    color: rgba(208,166,23,0.6)
   }
 }
 @media (max-width: $breakpoint-sm) {
@@ -249,6 +251,8 @@ article img {
 
 .blog-post {
 	.featured-image {
+		margin-left: auto;
+		margin-right: auto;
 		border-radius: 12px;
 	}
 }
