@@ -1,7 +1,7 @@
 ---
 template: blog-post
 title: "JS: Rest e Spread Operators"
-slug: nodejs/rest-spread
+slug: /nodejs/rest-spread
 date: 2021-02-13 12:28
 description: |-
   js
